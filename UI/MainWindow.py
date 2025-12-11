@@ -33,7 +33,7 @@ class MainWindow_Ui(QtCore.QObject):
         MainWindow.resize(800, 700)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);")
-        MainWindow.setWindowIcon(QtGui.QIcon(resource_path("UI\\Image\\favicon.ico")))
+        MainWindow.setWindowIcon(QtGui.QIcon(resource_path("UI/Image/favicon.ico")))
         self.Window = QtWidgets.QWidget(MainWindow)
         self.Window.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.Window.setObjectName("Window")
@@ -57,7 +57,7 @@ class MainWindow_Ui(QtCore.QObject):
         self.label.setStyleSheet("border-radius:10px;\n"
 "")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(resource_path("UI\\Image\\NoRainClassroom.jpg")))
+        self.label.setPixmap(QtGui.QPixmap(resource_path("UI/Image/NoRainClassroom.jpg")))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout_3.addWidget(self.label)

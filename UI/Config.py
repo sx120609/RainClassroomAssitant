@@ -19,7 +19,7 @@ class Config_Ui(object):
         Dialog.resize(430, 550)
         Dialog.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 9pt \"微软雅黑\";")
-        Dialog.setWindowIcon(QtGui.QIcon(resource_path("UI\\Image\\favicon.ico")))
+        Dialog.setWindowIcon(QtGui.QIcon(resource_path("UI/Image/favicon.ico")))
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea = QtWidgets.QScrollArea(Dialog)

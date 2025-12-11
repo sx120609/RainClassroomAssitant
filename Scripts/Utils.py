@@ -6,6 +6,8 @@ import requests
 import random
 import os
 import sys
+import platform
+from pathlib import Path
 
 lock = threading.Lock()
 
@@ -92,14 +94,18 @@ def get_initial_data():
 
 def get_config_path():
     # 获取配置文件路径
-    config_route = get_config_dir() + "\\config.json"
-    return config_route
+    return get_config_dir() / "config.json"
 
 def get_config_dir():
     # 获取配置文件所在文件夹
-    appdata_route = os.environ['APPDATA']
-    dir_route = appdata_route + "\\RainClassroomAssistant"
-    return dir_route
+    system = platform.system()
+    if system == "Windows":
+        base_dir = Path(os.environ.get("APPDATA", Path.home() / "AppData" / "Roaming"))
+    elif system == "Darwin":
+        base_dir = Path.home() / "Library" / "Application Support"
+    else:
+        base_dir = Path.home() / ".config"
+    return base_dir / "RainClassroomAssistant"
 
 def get_user_info(sessionid):
     # 获取用户信息
@@ -133,8 +139,5 @@ def get_on_lesson_old(sessionid):
 
 def resource_path(relative_path):
     # 解决打包exe的图片路径问题
-    if getattr(sys, 'frozen', False):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
+    base_path = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent.parent))
+    return str(base_path / relative_path)
