@@ -18,6 +18,6 @@
 v0.0.3版本，更新UI，此后版本双击打开即可使用！
 
 ### 在 macOS 打包
-1. 使用 Python 3.10、3.11 或 3.12（PyQt5 目前只提供到 3.12 的预编译包）。
+1. 使用 Python 3.9 及以上（当前依赖使用 PySide6，无需降版本）。
 2. 在仓库根目录运行 `./build_mac.sh`，脚本会创建本地 `.venv`、安装依赖并调用 PyInstaller。
 3. 打包完成后，应用位于 `dist/RainClassroomAssistant.app`，可以直接拖到「应用程序」文件夹或从终端运行。

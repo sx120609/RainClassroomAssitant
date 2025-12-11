@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtWidgets
+from PySide6 import QtWidgets
 from UI.MainWindow import MainWindow_Ui
 
 if __name__ == "__main__":
@@ -12,5 +12,5 @@ if __name__ == "__main__":
     # 启动监听
     ui.active()
     # 主窗体循环
-    app.exec_()
+    app.exec()
 
